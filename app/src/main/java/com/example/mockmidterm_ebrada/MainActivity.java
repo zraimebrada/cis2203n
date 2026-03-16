@@ -215,5 +215,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         textDisplay.setText(displayText);
     }
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
 
+        outState.putString(KEY_DISPLAY, textDisplay.getText().toString());
+        outState.putDouble(KEY_NUM1, num1);
+        outState.putDouble(KEY_NUM2, num2);
+        outState.putDouble(KEY_NUM3, num3);
+        outState.putString(KEY_OPERATOR, activeOperator);
+        outState.putBoolean(KEY_OPERATOR_SELECTED, isOperatorSelected);
+        outState.putBoolean(KEY_ERROR_STATE, isErrorState);
+    }
 }
