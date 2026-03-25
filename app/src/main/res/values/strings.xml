@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">exer03</string>
+    <string name="no_message_received">(No message received)</string>
 </resources>
