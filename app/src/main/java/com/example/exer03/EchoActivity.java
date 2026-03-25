@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class EchoActivity extends AppCompatActivity {
 
-
+    private static final String TAG = "EchoActivityLog";
     private TextView txtEcho;
 
     @Override
@@ -17,13 +17,14 @@ public class EchoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_echo);
 
+        Log.d(TAG, "onCreate started");
 
         txtEcho = findViewById(R.id.txtEcho);
 
         Intent receivedIntent = getIntent();
         String message = receivedIntent.getStringExtra(MainActivity.KEY_USER_MESSAGE);
 
-
+        Log.d(TAG, "Received message: " + message);
 
         if (message != null && !message.isEmpty()) {
             txtEcho.setText(message);

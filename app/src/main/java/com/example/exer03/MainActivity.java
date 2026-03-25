@@ -21,11 +21,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Log.d(TAG, "onCreate started");
 
         edtMessage = findViewById(R.id.edtMessage);
         btnSendMessage = findViewById(R.id.btnSendMessage);
 
         btnSendMessage.setOnClickListener(v -> {
+            Log.d(TAG, "Send Message button clicked");
             String message = edtMessage.getText().toString();
 
             Intent intent = new Intent(MainActivity.this, EchoActivity.class);
